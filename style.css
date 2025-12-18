@@ -18,10 +18,17 @@ background: linear-gradient(90deg, rgba(42, 155, 70, 1) 0%, rgba(87, 199, 133, 1
     padding: 30px;
 }
 .app h1{
+background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+ border-radius: 6px;
+ justify-content: center;
+text-align: center;
  font-size: 25px;
  font-weight: 600;
- margin-bottom: 20px;
-  color: #001e4d;
+  margin: auto;
+  color: whitesmoke;
   border-bottom: 1px solid #333;
   padding-bottom: 30px;
 }
@@ -83,11 +90,82 @@ footer{
     margin-top: 20px;
     border: 1px solid #333;
     border-radius: 3px;
+    background: #001e4d;
 
 }
 
 footer p{
     font-size: 1rem;
     font-weight: bold;
-    color: #160202;
+    color: #fff;
+}
+
+/* Result icon and congratulation styles */
+#result-icon{
+    text-align: center;
+    margin-top: 10px;
+    min-height: 60px;
+}
+.clap{
+    display: inline-block;
+    font-size: 48px;
+    transform-origin: center bottom;
+    animation: clap 0.9s ease-in-out 0s 3;
+}
+.congrats{
+    font-weight: 700;
+    color: #0b5;
+    margin-top: 6px;
+    font-size: 18px;
+}
+
+@keyframes clap{
+    0%{ transform: scale(1) rotate(0deg);} 
+    25%{ transform: scale(1.15) rotate(-8deg);} 
+    50%{ transform: scale(1) rotate(8deg);} 
+    75%{ transform: scale(1.12) rotate(-6deg);} 
+    100%{ transform: scale(1) rotate(0deg);} 
+}
+
+/* Failed/low-score animation */
+.fail{
+    display: inline-block;
+    font-size: 48px;
+    transform-origin: center;
+    animation: shake 0.8s ease-in-out 0s 3;
+}
+.fail-text{
+    font-weight: 700;
+    color: #c0392b;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+@keyframes shake{
+    0%{ transform: translateX(0);}
+    25%{ transform: translateX(-6px) rotate(-6deg);}
+    50%{ transform: translateX(6px) rotate(6deg);}
+    75%{ transform: translateX(-4px) rotate(-4deg);}
+    100%{ transform: translateX(0);}
+}
+
+/* Encourage animation for 70%-99% */
+.encourage{
+    display: inline-block;
+    font-size: 46px;
+    color: #f1c40f;
+    transform-origin: center;
+    animation: pulse 1s ease-in-out 0s 2;
+}
+.encourage-text{
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+@keyframes pulse{
+    0%{ transform: scale(1); opacity: 0.9; }
+    50%{ transform: scale(1.18); opacity: 1; }
+    100%{ transform: scale(1); opacity: 0.95; }
 }
