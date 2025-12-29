@@ -1,6 +1,41 @@
 const questions = [
+
+  {
+        question: "Which president was responsible for establishing and institutionalizing the statehood of Somaliland?",
+        type: "image",
+        answers: [
+            {image: 'images/Somalialnd-sixth President.png', name: 'Abdirahman Mohamed Abdilahi', correct: false},
+            {image: 'images/Somaliland-third President.png', name: 'Dahir Riyale Kahin', correct: false},
+            {image: 'images/Somalialnd-first  President.png', name: 'Abdirahman Ahmed Ali Tuur', correct: false},
+            {image: 'images/Somaliland-second president.png', name: 'Mohamed Haji Ibrahim Egal', correct: true},
+        ]
+    },
+
+      {
+        question: "Which president was responsible for implementing and advancing Somaliland’s infrastructure development?",
+        type: "image",
+        answers: [
+            {image: 'images/Somalialnd-fiveth  President.png', name: 'Muse Bihi Abdi', correct: false},
+            {image: 'images/Somaliland-third President.png', name: 'Dahir Riyale Kahin', correct: false},
+            {image: 'images/Somaliland-fourth President.png', name: 'Ahmed Mohamed Mohamoud (Silanyo)', correct: true},
+            {image: 'images/Somaliland-second president.png', name: 'Mohamed Haji Ibrahim Egal', correct: false},
+        ]
+    },
+
+
+        {
+        question: "Which of the following is the flag of Somaliland?",
+        type: "image",
+        answers: [
+            {image: './images/Somaliland_flag.png', correct: true},
+            {image: './images/Somalia_flag.png', correct: false},
+            {image: './images/Ruwanda_flag.png', correct: false},
+            {image: './images/Ethiopia_flag.png'}
+        ]
+    },
+
     {
-        question: "What is the capital of Somaliland?",
+        question: "Which is  the following capital of Somaliland?",
         answers: [
             {text: 'A. Hargeisa',correct: true}, 
             {text: 'B. Burco',correct: false}, 
@@ -69,9 +104,20 @@ const questions = [
     ]
     },
 
+     {
+        question: " The first country formally recognized Somaliland was?",
+        answers: [
+            {text: 'A. UK',correct:  false}, 
+            {text: 'B. Mexico',correct: false}, 
+            {text: 'C. Israel',correct: true}, 
+            {text: 'D. Ethiopia',correct: false}, 
+        
+    ]
+    },
 
+
+  
     
-
 
 ];
 
@@ -93,16 +139,41 @@ function showQuestion() {
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    currentQuestion.answers.forEach(answer=> {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButtonsElement.appendChild(button);
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click", selectAnswer);
-    })
+    if (currentQuestion.type === "image") {
+        currentQuestion.answers.forEach(answer => {
+            const button = document.createElement("button");
+            button.classList.add("btn", "img-btn");
+            if (answer.image) {
+                const img = document.createElement("img");
+                img.src = answer.image;
+                img.alt = answer.name ? answer.name : "Answer image option";
+                img.classList.add("answer-image");
+                img.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                    button.click();
+                });
+                button.appendChild(img);
+            }
+            if (answer.name) {
+                const nameDiv = document.createElement("div");
+                nameDiv.className = "president-name";
+                nameDiv.textContent = answer.name;
+                button.appendChild(nameDiv);
+            }
+            button.dataset.correct = !!answer.correct;
+            button.addEventListener("click", selectAnswer);
+            answerButtonsElement.appendChild(button);
+        });
+    } else {
+        currentQuestion.answers.forEach(answer=> {
+            const button = document.createElement("button");
+            button.innerHTML = answer.text;
+            button.classList.add("btn");
+            button.dataset.correct = !!answer.correct;
+            button.addEventListener("click", selectAnswer);
+            answerButtonsElement.appendChild(button);
+        });
+    }
 }
 
 function resetState() {
@@ -113,25 +184,27 @@ function resetState() {
     const resultIcon = document.getElementById('result-icon');
     if (resultIcon) resultIcon.innerHTML = '';
 function selectAnswer(e) {
-    const selectedBtn = e.target;
+    // Always get the button, even if the image is clicked
+    const selectedBtn = e.currentTarget || e.target.closest('button');
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
-        selectedBtn.classList.add("correct")
+        selectedBtn.classList.add("correct");
         score++;
     } else {
         selectedBtn.classList.add("incorrect");
     }
-    Array.from(answerButtonsElement.children).forEach(button=> {
+    Array.from(answerButtonsElement.children).forEach(button => {
         if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
-        button.disabled = true});
-        nextButton.style.display = "block";
+        button.disabled = true;
+    });
+    nextButton.style.display = "block";
 
-// Automatically advance to next question after a short delay
-            setTimeout(() => {
-            nextButton.click();
-        }, 1000);
+    // Automatically advance to next question after a short delay
+    setTimeout(() => {
+        nextButton.click();
+    }, 1000);
 }
 
     
