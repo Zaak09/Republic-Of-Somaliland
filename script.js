@@ -1,7 +1,9 @@
 const questions = [
 
+
   {
         question: "Which president was responsible for establishing and institutionalizing the statehood of Somaliland?",
+        question_so: "Kuma ahaa madaxweynihii aasaasay oo nidaamiyay dawladnimada Somaliland?",
         type: "image",
         answers: [
             {image: 'images/Somalialnd-sixth President.png', name: 'Abdirahman Mohamed Abdilahi', correct: false},
@@ -11,8 +13,10 @@ const questions = [
         ]
     },
 
-      {
+
+    {
         question: "Which president was responsible for implementing and advancing Somaliland’s infrastructure development?",
+        question_so: "Kuma ahaa madaxweynihii hirgeliyay oo horumariyay kaabayaasha dhaqaalaha Somaliland?",
         type: "image",
         answers: [
             {image: 'images/Somalialnd-fiveth  President.png', name: 'Muse Bihi Abdi', correct: false},
@@ -23,8 +27,10 @@ const questions = [
     },
 
 
-        {
+
+    {
         question: "Which of the following is the flag of Somaliland?",
+        question_so: "Midkee ka mid ah waa calanka Somaliland?",
         type: "image",
         answers: [
             {image: './images/Somaliland_flag.png', correct: true},
@@ -34,85 +40,93 @@ const questions = [
         ]
     },
 
+
     {
         question: "Which is  the following capital of Somaliland?",
+        question_so: "Midkee waa caasimadda Somaliland?",
         answers: [
             {text: 'A. Hargeisa',correct: true}, 
             {text: 'B. Burco',correct: false}, 
             {text: 'C. Borama',correct: false}, 
-        
-    ]
+        ]
     },
+
 
     {
         question: "How many Presidents have been elected in somaliland elections?",
+        question_so: "Imisa madaxweyne ayaa si doorasho ah loogu doortay Somaliland?",
         answers: [
             {text: 'A. 9 Presidents',correct: false}, 
             {text: 'B. 4 Presidents',correct: false}, 
             {text: 'C. 6 Presidents',correct: true}, 
-        
-    ]
+        ]
     },
+
 
     {
         question: "Which is the following Somaliland's main port?",
+        question_so: "Midkee waa dekedda ugu weyn Somaliland?",
         answers: [
             {text: 'A. Las-qorey Port',correct: false}, 
             {text: 'B. Barbera Port',correct: true}, 
             {text: 'C. Lughaya Port',correct: false}, 
-        
-    ]
+        ]
     },
+
 
     {
         question: "How Long somaliland's coastline in killometres?",
+        question_so: "Dhererka xeebta Somaliland waa imisa KM?",
         answers: [
             {text: 'A. 600KM',correct: false}, 
             {text: 'B. 720KM',correct: false}, 
             {text: 'C. 850KM',correct: true}, 
-        
-    ]
+        ]
     },
+
 
     {
         question: "In which year was the Constitution of the Republic of Somaliland written?",
+        question_so: "Sanadkee ayaa la qoray dastuurka Jamhuuriyadda Somaliland?",
         answers: [
             {text: 'A. 2000',correct: false}, 
             {text: 'B. 1997',correct: false}, 
             {text: 'C. 2002',correct: true}, 
-        
-    ]
+        ]
     },
-      {
+
+    {
         question: "How many one-person, one-vote elections have been held during the existence of the Republic of Somaliland?",
+        question_so: "Imisa doorasho oo qof iyo cod ah ayaa ka dhacday Somaliland tan iyo markii la aas aasay?",
         answers: [
             {text: 'A. 7 Elections',correct: true}, 
             {text: 'B. 8 Elections',correct: false}, 
             {text: 'C. 5 Elections',correct: false}, 
-        
-    ]
+        ]
     },
 
-       {
+
+    {
         question: " The Somaliland passport was first issued in?",
+        question_so: "Baasaboorka Somaliland markii ugu horreysay goormaa la bixiyay?",
         answers: [
             {text: 'A. 1995',correct:  false}, 
             {text: 'B. 1996',correct: true}, 
             {text: 'C. 2000',correct: false}, 
             {text: 'D. 2001',correct: false}, 
-        
-    ]
+        ]
     },
 
-     {
+
+    {
         question: " The first country formally recognized Somaliland was?",
+        question_so: "Waddankii ugu horreeyay ee si rasmi ah u aqoonsaday Somaliland waa kee?",
         answers: [
             {text: 'A. UK',correct:  false}, 
             {text: 'B. Mexico',correct: false}, 
             {text: 'C. Israel',correct: true}, 
             {text: 'D. Ethiopia',correct: false}, 
-        
-    ]
+        ]
     },
 
 
