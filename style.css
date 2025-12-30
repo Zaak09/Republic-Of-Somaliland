@@ -89,11 +89,30 @@ background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, F
  border-radius: 6px;
  justify-content: center;
 text-align: center;
- font-size: 25px;
+ /* font-size: 25px; */
  font-weight: 600;
 padding: 15px;
   color: whitesmoke;
   border-bottom: 1px solid #333;
+  font-size: 2rem;
+    font-weight: bold;
+    color: transparent;
+    background-image: url('./images/Map flag of somaliland.png'); 
+    background-size: 200%; /* Enlarged for smooth animation */
+    background-position: 50 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 35s infinite alternate linear;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 50, 100, 150%;
+    }
+    100% {
+        background-position: 180% 100%;
+    }
   /* padding-bottom: 30px; */
 }
 
